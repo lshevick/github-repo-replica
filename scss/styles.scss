@@ -1,0 +1,11 @@
+:root {
+    --bg-color: #0F1216;
+    --repo-txt-color: #469BFA;
+    --info-txt-color: #C1CBD3;
+    --success-color: #007B34;
+    --secondary-bg-color: #1E2228;
+}
+
+body {
+    background-color: var(--bg-color);
+}
