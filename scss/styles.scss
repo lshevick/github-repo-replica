@@ -96,6 +96,15 @@ body {
     }
 }
 
+.profile-wrapper {
+    position: relative;
+}
+
+.profile.row {
+    position: relative;
+    top: -3rem;
+    background-color: transparent;
+}
 
 .profile-img {
     position: relative;
@@ -106,6 +115,7 @@ body {
     border: 1px solid var(--color-primer-border-contrast);
     border-radius: 50%;
     overflow: hidden;
+    z-index: 10;
 
     img {
         object-fit: cover;
