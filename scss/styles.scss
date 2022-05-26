@@ -4,17 +4,68 @@
     --info-txt-color: #C1CBD3;
     --success-color: #007B34;
     --secondary-bg-color: #1E2228;
+    --color-primer-border-contrast: rgba(255,255,255,0.2);
 }
 
-*, body {
+*,
+body {
     background-color: var(--bg-color);
     color: var(--info-txt-color);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.search-bar {
+    background-color: var(--secondary-bg-color);
+    border-color: var(--color-primer-border-contrast);
+}
+
 .repo-wrapper {
-    li {
+    .repo-name {
+        text-decoration: none;
+        font-size: 20px;
         color: var(--repo-txt-color);
+    }
+
+    .repo-language-color {
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border: 1px solid var(--color-primer-border-contrast);
+        border-radius: 50%;
+    }
+
+    .repo-language {
+        color: var(--info-txt-color);
+    }
+
+    .repo-info {
+        font-size: 12px;
+    }
+}
+
+.repo-nav {
+    
+    .repo-nav-btn {
+        color: #C1CBD3;
+        background-color: #21262d;
+        border: 1px solid var(--color-primer-border-contrast);
+        box-shadow: inset;
+        margin: 0 0.2rem;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .repo-nav-btn:hover {
+        border-color: white;
+
+    }
+
+    .new-btn {
+        margin-left: 1rem;
+        color:#C1CBD3;
+        background-color: var(--success-color);
+        border: 1px solid var(--color-primer-border-contrast);
     }
 }
 
@@ -25,19 +76,44 @@
     line-height: 1;
     width: 100%;
     height: auto;
-    border: 1px solid var(--secondary-bg-color);
+    border: 1px solid var(--color-primer-border-contrast);
     border-radius: 50%;
     overflow: hidden;
-    
+
     img {
         object-fit: cover;
-        
+
     }
-    
+
 }
 
 
 .usr-name {
     padding: 0.5rem 0;
     font-size: 1.5rem;
+}
+
+.follow-wrapper {
+    font-size: 14px;
+    margin-top: 1rem;
+}
+
+
+
+.text-right {
+    button {
+        color: var(--info-txt-color);
+        float: right;
+        border: 1px solid var(--color-primer-border-contrast);
+    }
+
+    button:hover {
+        background-color: var(--info-txt-color);
+        color: var(--secondary-bg-color);
+
+        i {
+            background-color: var(--info-txt-color);
+            color: var(--secondary-bg-color);
+        }
+    }
 }

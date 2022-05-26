@@ -47,7 +47,7 @@
                     </li>
                 </ul>
                 <form class="d-flex my-2 my-lg-0">
-                    <input class="form-control me-sm-2" type="text" placeholder="Search">
+                    <input class="search-bar form-control me-sm-2" type="text" placeholder="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
@@ -61,19 +61,26 @@
             </div>
             <div class="repo-section col-8">
 
-                <ul class="nav nav-pills justify-content-end">
+                <ul class="repo-nav nav nav-pills justify-content-end">
 
                     <form class="d-flex my-2 m-lg-0">
-                        <input type="text" class="form-control me-sm-2" id="searchbar"
+                        <input type="text" class="search-bar form-control me-sm-2" id="searchbar"
                             placeholder="Find a reposoitory...">
                     </form>
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Active</a>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="repo-nav-btn nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false">Type</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Action</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <a class="repo-nav-btn nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Language</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
@@ -82,10 +89,10 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Another link</a>
+                        <a href="#" class="repo-nav-btn nav-link">Sort</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link disabled">Disabled</a>
+                        <a href="#" class="repo-nav-btn nav-link new-btn"><i class="fa-solid fa-book"></i> New</a>
                     </li>
                 </ul>
 
@@ -101,8 +108,27 @@
     <script id="repo-template" type="text/x-handlebars-template">
         <ul class="your-repos-list row">
             {{#each repos}}
-            <li class="col-12 d-flex width-full py-4 border-bottom color-border-muted">
-                {{this.name}}
+            <li class="col-12 d-flex width-full py-4 border-bottom color-border-light">
+               <div class="col-10 col-lg-9 d-inline-block">
+                   <h3>
+                       <a href="{{this.html_url}}" class="repo-name">{{this.name}}</a>
+                   </h3>
+
+                <div class="repo-info color-fg-muted mt-2">
+                    <span class="repo-language-color"></span>
+                    <span class="repo-language">{{this.language}}</span>
+                    <span> Updated </span>
+                    <relative-time datetime =''>{{this.updated_at}}</relative-time>
+                </div>
+            </div>
+            <div class="col-2 col-lg-3 d-flex flex-column flex-justify-around">
+                <div class="text-right">
+                    <button value="Star" title="Star lshevick/{{this.name}}" type="submit" class="rounded-left-2 js-toggler-target btn-sm btn BtnGroup-item">
+                        <i class="fa-solid fa-star"></i> Star
+                    </button>
+                </div>
+            </div>
+
 
             </li>
             {{/each}}
@@ -116,7 +142,7 @@
             </div>
             <div class="profile-info">
                 <p class="usr-name">{{profile.login}}</p>
-                <button class="follow-btn">Follow</button>
+                <button type="button" class="follow-btn btn btn-secondary btn-lg btn-block">Follow</button>
                 <p class="follow-wrapper">
                     <span><i class="fa-solid fa-user-group"></i></span>
                     <span>{{profile.followers}} Follower</span>
