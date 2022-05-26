@@ -8,29 +8,6 @@ const headers = {
     'Authorization': `token ${token}`,
 };
 
-// Handlebars.registerHelper('formatDate', function (dateString) {
-//     return new Handlebars.safeString(
-//         formatDistanceToNow(dateString)
-//     );
-// });
-
-const updateLanguageColor = () => {
-    const langColor = document.querySelector('.repo-lang-color');
-    const lang = document.querySelector('.repo-language');
-
-    switch (lang.innerHTML) {
-        case 'HTML':
-            langColor.style.backgroundColor = '#D45635';
-            break;
-        case 'CSS':
-            langColor.style.backgroundColor = '#524078';
-            break;
-        case 'Javascript':
-            langColor.style.backgroundColor = '#EFDF70';
-            break;
-    }
-}
-
 
 const generateRepos = (data) => {
     const source = document.querySelector('#repo-template').innerHTML;
@@ -70,7 +47,3 @@ fetch(`${BASE_URL}`, headers)
         }
     })
     .then(data => generateProfile(data));
-
-
-
-    updateLanguageColor();
