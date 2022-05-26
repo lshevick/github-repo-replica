@@ -4,6 +4,7 @@
   --info-txt-color: #C1CBD3;
   --success-color: #007B34;
   --secondary-bg-color: #1E2228;
+  --seoncdary-txt-color: #8b949e;
   --color-primer-border-contrast: rgba(255,255,255,0.2);
 }
 
@@ -14,15 +15,33 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+body {
+  height: 100%;
+}
+
 .search-bar {
   background-color: var(--secondary-bg-color);
   border-color: var(--color-primer-border-contrast);
 }
 
+.secondary-nav {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-primer-border-contrast);
+  position: sticky;
+}
+.secondary-nav .secondary-nav-buttons a {
+  color: var(--info-txt-color);
+}
+
 .repo-wrapper .repo-name {
   text-decoration: none;
   font-size: 20px;
+  font-weight: bolder;
   color: var(--repo-txt-color);
+}
+.repo-wrapper .repo-item {
+  border-bottom: 1px solid var(--color-primer-border-contrast);
 }
 .repo-wrapper .repo-language-color {
   position: relative;
@@ -34,12 +53,15 @@ body {
   border-radius: 50%;
 }
 .repo-wrapper .repo-language {
-  color: var(--info-txt-color);
+  color: var(--seoncdary-txt-color);
 }
 .repo-wrapper .repo-info {
   font-size: 12px;
 }
 
+.repo-nav .search-bar {
+  width: 100%;
+}
 .repo-nav .repo-nav-btn {
   color: #C1CBD3;
   background-color: #21262d;
@@ -80,6 +102,10 @@ body {
 .follow-wrapper {
   font-size: 14px;
   margin-top: 1rem;
+}
+
+.follow-btn {
+  width: 100%;
 }
 
 .text-right button {

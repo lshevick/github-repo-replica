@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark mb-3 width-full border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-dark mb-3 border-bottom">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><i class="fa-brands fa-github"></i></a>
             <button class="navbar-toggler hidden-lg-up" type="button" data-bs-toggle="collapse"
@@ -53,8 +53,37 @@
             </div>
         </div>
     </nav>
+    <nav class="secondary-nav nav navbar-dark row d-flex justify-content-end">
+        <div class="sidebar col-3">
+
+        </div>
+        <div class="secondary-nav-buttons my-2 pt-2 col-8">
+            <a href="#" class="secondary-nav-item nav-item btn">
+                <i class="fa-solid fa-book-open pe-1"></i>
+                Overview
+            </a>
+            <a href="#" class="secondary-nav-item nav-item btn ">
+                <i class="fa-solid fa-book pe-1"></i>
+                Repositories
+                <span></span>
+            </a>
+            <a href="#" class="secondary-nav-item nav-item btn ">
+                <i class="fa-solid fa-table-cells-large pe-1"></i>
+                Projects
+            </a>
+            <a href="#" class="secondary-nav-item nav-item btn ">
+                <i class="fa-solid fa-box pe-1"></i>
+                Packages
+            </a>
+            <a href="#" class="secondary-nav-item nav-item btn ">
+                <i class="fa-solid fa-star pe-1"></i>
+                Stars
+            </a>
+
+        </div>
+    </nav>
     <div class="container">
-        <div class="repo-grid row">
+        <div class="repo-grid row pt-3">
 
             <div class="profile-wrapper col-3">
 
@@ -69,8 +98,8 @@
                     </form>
 
                     <li class="nav-item dropdown">
-                        <a href="#" class="repo-nav-btn nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button"
-                        aria-haspopup="true" aria-expanded="false">Type</a>
+                        <a href="#" class="repo-nav-btn nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            role="button" aria-haspopup="true" aria-expanded="false">Type</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
@@ -79,8 +108,8 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="repo-nav-btn nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">Language</a>
+                        <a class="repo-nav-btn nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                            role="button" aria-haspopup="true" aria-expanded="false">Language</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
@@ -108,20 +137,20 @@
     <script id="repo-template" type="text/x-handlebars-template">
         <ul class="your-repos-list row">
             {{#each repos}}
-            <li class="col-12 d-flex width-full py-4 border-bottom color-border-light">
-               <div class="col-10 col-lg-9 d-inline-block">
+            <li class=" repo-item col-12 d-flex width-full py-4">
+               <div class="col-10 col-lg-9 py-2 d-inline-block">
                    <h3>
                        <a href="{{this.html_url}}" class="repo-name">{{this.name}}</a>
                    </h3>
 
-                <div class="repo-info color-fg-muted mt-2">
+                <div class="repo-info color-fg-muted my-2">
                     <span class="repo-language-color"></span>
                     <span class="repo-language">{{this.language}}</span>
                     <span> Updated </span>
                     <relative-time datetime =''>{{this.updated_at}}</relative-time>
                 </div>
             </div>
-            <div class="col-2 col-lg-3 d-flex flex-column flex-justify-around">
+            <div class="col-2 col-lg-3 pt-2 d-flex flex-column flex-justify-around">
                 <div class="text-right">
                     <button value="Star" title="Star lshevick/{{this.name}}" type="submit" class="rounded-left-2 js-toggler-target btn-sm btn BtnGroup-item">
                         <i class="fa-solid fa-star"></i> Star
@@ -142,7 +171,7 @@
             </div>
             <div class="profile-info">
                 <p class="usr-name">{{profile.login}}</p>
-                <button type="button" class="follow-btn btn btn-secondary btn-lg btn-block">Follow</button>
+                <button type="button" class="follow-btn btn btn-secondary btn-sm btn-block">Follow</button>
                 <p class="follow-wrapper">
                     <span><i class="fa-solid fa-user-group"></i></span>
                     <span>{{profile.followers}} Follower</span>
