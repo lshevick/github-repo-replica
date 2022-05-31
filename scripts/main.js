@@ -1,12 +1,12 @@
-import { token } from '../modules/auth_token.js';
+// import { token } from '../modules/auth_token.js';
 // import { formatDistanceToNow } from '../date-fns';
 
 const BASE_URL = 'https://api.github.com/users/lshevick';
-const headers = {
-    'User_Agent': 'lshevick',
-    'Accept': 'application/vnd.github.v3+json',
-    'Authorization': `token ${token}`,
-};
+// const headers = {
+//     'User_Agent': 'lshevick',
+//     'Accept': 'application/vnd.github.v3+json',
+//     'Authorization': `token ${token}`,
+// };
 
 
 const generateRepos = (data) => {
@@ -27,7 +27,7 @@ const generateProfile = (data) => {
     document.querySelector('.profile-wrapper').innerHTML = html;
 }
 
-fetch(`${BASE_URL}/repos`, headers)
+fetch(`${BASE_URL}/repos`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response bad');
@@ -38,7 +38,7 @@ fetch(`${BASE_URL}/repos`, headers)
     .then(data => generateRepos(data));
 
 
-fetch(`${BASE_URL}`, headers)
+fetch(`${BASE_URL}`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response bad');
